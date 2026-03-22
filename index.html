@@ -72,21 +72,21 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:flex;align-items:
 .chapter-content{opacity:0;transform:translateY(40px);transition:opacity 1s .4s,transform 1s .4s;}
 .chapter-content.visible{opacity:1;transform:translateY(0);}
 .chapter-line{position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.15;}
-.chapter-num-bg{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:'Orbitron',monospace;font-size:clamp(8rem,20vw,16rem);font-weight:900;color:rgba(0,245,255,.025);pointer-events:none;user-select:none;line-height:1;}
+.chapter-num-bg{position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Orbitron',monospace;font-size:clamp(6rem,15vw,14rem);font-weight:900;color:rgba(0,245,255,.02);pointer-events:none;user-select:none;line-height:1;overflow:hidden;max-width:50%;}
 
 /* PROLOGUE */
-#prologue{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;z-index:1;padding:0 2rem;}
-.prologue-inner{max-width:900px;}
+#prologue{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;z-index:1;padding:5rem 2rem 6rem;}
+.prologue-inner{max-width:900px;width:100%;display:flex;flex-direction:column;align-items:center;}
 .prologue-pre{font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--cyan);letter-spacing:.5em;text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:fadeUp 1s .3s forwards;}
 .prologue-name{font-family:'Orbitron',monospace;font-size:clamp(3.5rem,10vw,8rem);font-weight:900;line-height:.95;color:#fff;opacity:0;animation:fadeUp 1s .6s forwards;}
 .prologue-name .cyan{color:var(--cyan);text-shadow:var(--glow-cyan);}
-.prologue-tagline{font-family:'Crimson Pro',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-style:italic;color:rgba(224,238,255,.55);margin:1.5rem 0 2.5rem;opacity:0;animation:fadeUp 1s .9s forwards;}
-.prologue-stats{display:flex;gap:3rem;justify-content:center;margin:2.5rem 0;opacity:0;animation:fadeUp 1s 1.1s forwards;}
+.prologue-tagline{font-family:'Crimson Pro',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-style:italic;color:rgba(224,238,255,.55);margin:1rem 0 1.5rem;opacity:0;animation:fadeUp 1s .9s forwards;}
+.prologue-stats{display:flex;gap:3rem;justify-content:center;margin:1.5rem 0;opacity:0;animation:fadeUp 1s 1.1s forwards;}
 .p-stat{text-align:center;}
 .p-stat-num{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--cyan);display:block;}
 .p-stat-label{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;}
-.prologue-begin{display:inline-flex;align-items:center;gap:1rem;font-family:'Share Tech Mono',monospace;font-size:.75rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp 1s 1.4s forwards;}
-.prologue-scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.2em;opacity:0;animation:fadeIn 1s 2s forwards;}
+.prologue-begin{display:inline-flex;align-items:center;gap:1rem;font-family:'Share Tech Mono',monospace;font-size:.75rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp 1s 1.4s forwards;margin-bottom:1rem;}
+.prologue-scroll-hint{display:flex;flex-direction:column;align-items:center;gap:.5rem;font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.2em;opacity:0;animation:fadeIn 1s 2.5s forwards;margin-top:2rem;width:100%;text-align:center;}
 .scroll-arrow{width:20px;height:20px;border-right:1px solid var(--cyan);border-bottom:1px solid var(--cyan);transform:rotate(45deg);animation:bounce 2s infinite;}
 .prologue-photo-wrap{position:relative;width:160px;height:160px;margin:0 auto 2rem;opacity:0;animation:fadeIn 1.2s .3s forwards;}
 .prologue-photo-ring{position:absolute;inset:-16px;border:1px solid rgba(0,245,255,.25);border-radius:50%;animation:spin 20s linear infinite;}
@@ -219,6 +219,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:flex;align-items:
 @keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes floatUp{from{transform:translateY(100vh);opacity:0}10%{opacity:.3}90%{opacity:.3}to{transform:translateY(-10vh);opacity:0}}
+@keyframes glitch{0%,100%{text-shadow:2px 0 var(--pink),-2px 0 var(--cyan)}50%{text-shadow:-2px 0 var(--pink),2px 0 var(--cyan)}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -302,9 +303,9 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:flex;align-items:
       <div class="p-stat"><span class="p-stat-num">86%</span><span class="p-stat-label">ROC-AUC</span></div>
       <div class="p-stat"><span class="p-stat-num">∞</span><span class="p-stat-label">Curiosity</span></div>
     </div>
-    <div class="prologue-begin">Begin the story</div>
+    <div class="prologue-begin">— Begin the Story —</div>
+    <div class="prologue-scroll-hint">SCROLL TO BEGIN<div class="scroll-arrow"></div></div>
   </div>
-  <div class="prologue-scroll-hint">SCROLL TO BEGIN<div class="scroll-arrow"></div></div>
 </section>
 
 <!-- CHAPTER 1 — ORIGIN -->
@@ -488,7 +489,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:flex;align-items:
           <h2>Let's Build Something <span>Intelligent.</span></h2>
           <p>Currently exploring AI/ML internship opportunities and ambitious projects. Open to collaborations, research, and anything that pushes the boundaries of what machines can do.</p>
           <div class="contact-items">
-            <a href="mailto:yugbhatt75@gmail.com" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value">yugbhatt75@gmail.com</div></div></a>
+            <a href="/cdn-cgi/l/email-protection#87fef2e0e5efe6f3f3b0b2c7e0eae6eeeba9e4e8ea" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><span class="__cf_email__" data-cfemail="304945575258514444070570575d51595c1e535f5d">[email&#160;protected]</span></div></div></a>
             <a href="tel:+917600634214" class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value">+91 76006 34214</div></div></a>
             <div class="contact-item" style="cursor:default;"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Nadiad, Gujarat, India</div></div></div>
           </div>
@@ -515,7 +516,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:flex;align-items:
             <div>&nbsp;&nbsp;<span class="t-key">"next_chapter"</span>: <span class="t-val">"To be written..."</span></div>
             <div style="color:var(--muted)">}</div>
             <div style="margin-top:.75rem"><span class="t-prompt">➜ </span><span class="t-comment"># The story continues</span></div>
-            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal yugbhatt75@gmail.com</span><span class="t-cursor"></span></div>
+            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="671e1200050f061313505227000a060e0b4904080a">[email&#160;protected]</a></span><span class="t-cursor"></span></div>
           </div>
         </div>
       </div>
@@ -532,7 +533,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:flex;align-items:
   </div>
 </section>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Cursor
 const cursor=document.getElementById('cursor');
 const ring=document.getElementById('cursorRing');
@@ -572,12 +573,15 @@ dots.forEach(dot=>{dot.addEventListener('click',()=>{const t=document.getElement
 // Cert filter
 function filterCerts(cat,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+    btn.classList.add('active');
   document.querySelectorAll('.cert-card').forEach(card=>{card.style.display=(cat==='all'||card.dataset.category===cat)?'block':'none';});
 }
 
-// Fallback
-setTimeout(()=>{document.querySelectorAll('.chapter-label,.chapter-title,.chapter-narrative,.chapter-content').forEach(el=>el.classList.add('visible'));},500);
+// Fallback - force show everything
+setTimeout(()=>{
+  document.querySelectorAll('.chapter-label,.chapter-title,.chapter-narrative,.chapter-content').forEach(el=>el.classList.add('visible'));
+  document.querySelectorAll('.prologue-pre,.prologue-name,.prologue-tagline,.prologue-stats,.prologue-begin,.prologue-photo-wrap,.prologue-scroll-hint').forEach(el=>{el.style.opacity='1';el.style.transform='translateY(0)';});
+},400);
 </script>
 </body>
 </html>
