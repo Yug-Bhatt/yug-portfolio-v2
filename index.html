@@ -1045,7 +1045,8 @@
       <div class="hero-avatar-wrap">
         <div class="avatar-ring"></div>
         <div class="avatar-ring2"></div>
-        <div class="avatar-placeholder">
+        <img src="yug_1.jpg" alt="Yug Bhatt" class="avatar-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="avatar-placeholder" style="display:none;">
           YB
           <small>AI · ML · DS</small>
         </div>
@@ -1225,18 +1226,21 @@
       <div class="project-card reveal">
         <div class="project-header">
           <div>
-            <div class="project-featured">★ Featured Project</div>
+            <div class="project-featured" style="color:var(--yellow);">⚙ In Development &nbsp;·&nbsp; Collaborative Project (2 members)</div>
             <div class="project-name glitch">SmartFlare</div>
             <div class="project-subtitle">Financial Nervous System — Multi-Model AI Risk Engine</div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/Yug-Bhatt" class="project-link" target="_blank" title="GitHub">GH</a>
+            <a href="https://github.com/Yug-Bhatt" class="project-link" target="_blank" title="GitHub (Private Repo)">GH</a>
           </div>
         </div>
         <div class="project-body">
           <div>
+            <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 1rem;border:1px solid rgba(0,245,255,0.25);background:rgba(0,245,255,0.05);font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:var(--cyan);letter-spacing:0.1em;margin-bottom:1.2rem;">
+              👤 MY ROLE — Frontend & UI Development
+            </div>
             <p class="project-desc">
-              Transforms static loan risk assessment into a dynamic, multi-model AI intelligence engine. Instead of labeling a loan as "risky," it identifies the root cause through a structured Neural Risk Source architecture — enabling proactive financial strategy over reactive decision-making.
+              A collaborative AI project transforming static loan risk assessment into a dynamic, multi-model intelligence engine. Instead of labeling a loan as "risky," it identifies the root cause through a Neural Risk Source architecture. I am responsible for building the entire Frontend interface and UI/UX of the system.
             </p>
             <div class="project-metrics">
               <span class="metric">6-Node Intelligence Engine</span>
@@ -1261,12 +1265,13 @@
           </div>
         </div>
         <div class="project-footer">
+          <span class="tag">Frontend Dev</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Next.js / React</span>
           <span class="tag">Machine Learning</span>
           <span class="tag">NLP</span>
-          <span class="tag">Anomaly Detection</span>
           <span class="tag">Risk Modeling</span>
-          <span class="tag">Financial Analytics</span>
-          <span class="tag">Multi-Model Systems</span>
+          <span class="tag">🔒 Private Repo</span>
         </div>
       </div>
 
@@ -1316,10 +1321,10 @@
       <div class="section-line"></div>
     </div>
     <div class="certs-stats reveal">
-      <div class="cert-stat"><span class="cert-stat-num">07+</span><span class="cert-stat-label">Total</span></div>
-      <div class="cert-stat"><span class="cert-stat-num">03</span><span class="cert-stat-label">AI Focused</span></div>
+      <div class="cert-stat"><span class="cert-stat-num">10+</span><span class="cert-stat-label">Total</span></div>
+      <div class="cert-stat"><span class="cert-stat-num">04</span><span class="cert-stat-label">AI Focused</span></div>
       <div class="cert-stat"><span class="cert-stat-num">01</span><span class="cert-stat-label">Cloud</span></div>
-      <div class="cert-stat"><span class="cert-stat-num">03</span><span class="cert-stat-label">Programming & Workshop</span></div>
+      <div class="cert-stat"><span class="cert-stat-num">05</span><span class="cert-stat-label">Programming & Workshop</span></div>
     </div>
     <div class="certs-filters reveal">
       <button class="filter-btn active" onclick="filterCerts('all', this)">All</button>
@@ -1330,51 +1335,72 @@
     </div>
     <div class="certs-grid reveal" id="certsGrid">
       <div class="cert-card" data-category="ai">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/nvidia_certificate.jpg" alt="NVIDIA Certificate" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/nvidia_certificate.jpg" alt="NVIDIA Certificate" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">NVIDIA Certificate</div>
           <span class="cert-category ai">AI</span>
         </div>
       </div>
       <div class="cert-card" data-category="ai">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/nptel_certificate.jpg" alt="NPTEL Certificate" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/nptel_certificate.jpg" alt="NPTEL Certificate" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">NPTEL Certificate</div>
           <span class="cert-category ai">AI</span>
         </div>
       </div>
       <div class="cert-card" data-category="ai">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/coursera_google.jpg" alt="Coursera Google" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/coursera_google.jpg" alt="Coursera Google" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">Coursera — Google AI</div>
           <span class="cert-category ai">AI</span>
         </div>
       </div>
       <div class="cert-card" data-category="cloud">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/google_cloud.jpg" alt="Google Cloud" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/google_cloud.jpg" alt="Google Cloud" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">Google Cloud</div>
           <span class="cert-category cloud">Cloud</span>
         </div>
       </div>
       <div class="cert-card" data-category="programming">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/java_certificate.jpg" alt="Java Certificate" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/java_certificate.jpg" alt="Java Certificate" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">Java Certificate</div>
           <span class="cert-category programming">Programming</span>
         </div>
       </div>
       <div class="cert-card" data-category="programming">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/fdsa_certi.jpg" alt="FDSA Certificate" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/fdsa_certi.jpg" alt="FDSA Certificate" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">FDSA Certificate</div>
           <span class="cert-category programming">Programming</span>
         </div>
       </div>
       <div class="cert-card" data-category="workshop">
-        <img class="cert-thumb" src="https://ai-ml-portfolio-orcin.vercel.app/certificates/nvidia_workshop.jpg" alt="NVIDIA Workshop" onerror="this.style.display='none'"/>
+        <img class="cert-thumb" src="certificates/nvidia_workshop.jpg" alt="NVIDIA Workshop" onerror="this.style.display='none'"/>
         <div class="cert-info">
           <div class="cert-name">NVIDIA Workshop</div>
+          <span class="cert-category workshop">Workshop</span>
+        </div>
+      </div>
+      <div class="cert-card" data-category="ai">
+        <img class="cert-thumb" src="certificates/deeplearning_certificate.jpg" alt="DeepLearning.AI Certificate" onerror="this.style.display='none'"/>
+        <div class="cert-info">
+          <div class="cert-name">DeepLearning.AI — Neural Networks & Deep Learning</div>
+          <span class="cert-category ai">AI</span>
+        </div>
+      </div>
+      <div class="cert-card" data-category="programming">
+        <img class="cert-thumb" src="certificates/google_python_certificate.jpg" alt="Google Python Certificate" onerror="this.style.display='none'"/>
+        <div class="cert-info">
+          <div class="cert-name">Google — Intro to Data Analysis Using Python</div>
+          <span class="cert-category programming">Programming</span>
+        </div>
+      </div>
+      <div class="cert-card" data-category="workshop">
+        <img class="cert-thumb" src="certificates/CHARUSAT GenAI Workshop.jpg" alt="CHARUSAT GenAI Workshop" onerror="this.style.display='none'"/>
+        <div class="cert-info">
+          <div class="cert-name">CHARUSAT — Generative AI Workshop (GUJCOST · DST)</div>
           <span class="cert-category workshop">Workshop</span>
         </div>
       </div>
@@ -1391,11 +1417,11 @@
         <h2>Let's Build Something<br><span>Intelligent.</span></h2>
         <p>Currently exploring AI/ML internship opportunities and ambitious projects. If you're working on something interesting, I'd love to connect.</p>
         <div class="contact-items">
-          <a href="mailto:yugbhatt75@gmail.com" class="contact-item">
+          <a href="/cdn-cgi/l/email-protection#1a636f7d78727b6e6e2d2f5a7d777b737634797577" class="contact-item">
             <div class="contact-icon">✉</div>
             <div class="contact-detail">
               <div class="contact-label">Email</div>
-              <div class="contact-value">yugbhatt75@gmail.com</div>
+              <div class="contact-value"><span class="__cf_email__" data-cfemail="364f4351545e574242010376515b575f5a1855595b">[email&#160;protected]</span></div>
             </div>
           </a>
           <a href="tel:+917600634214" class="contact-item">
@@ -1443,7 +1469,7 @@
           <div>&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-value">"Gujarat, India"</span></div>
           <div style="color:var(--muted)">}</div>
           <div style="margin-top:0.75rem;"><span class="t-prompt">➜ </span><span class="t-comment"># Ready to collaborate</span></div>
-          <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --email yugbhatt75@gmail.com</span><span class="t-cursor"></span></div>
+          <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8cf5f9ebeee4edf8f8bbb9ccebe1ede5e0a2efe3e1">[email&#160;protected]</a></span><span class="t-cursor"></span></div>
         </div>
       </div>
     </div>
@@ -1456,7 +1482,7 @@
   <div>Built with <span>&#9829;</span> & Neon · AIML @ CHARUSAT</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Custom cursor
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
@@ -1501,16 +1527,4 @@ for (let i = 0; i < 30; i++) {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Cert filter
-function filterCerts(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.cert-card').forEach(card => {
-    card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
-  });
-}
-</script>
-</body>
-</html>
+document.querySelectorAll('.reveal').forEach(el => observer.o
