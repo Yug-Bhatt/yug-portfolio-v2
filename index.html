@@ -71,6 +71,9 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
 .chapter-narrative.visible{opacity:1;transform:translateY(0);}
 .chapter-content{opacity:0;transform:translateY(40px);transition:opacity 1s .4s,transform 1s .4s;}
 .chapter-content.visible{opacity:1;transform:translateY(0);}
+/* Hard fallback — ensures content is never permanently hidden */
+.chapter-label, .chapter-title, .chapter-narrative, .chapter-content { animation: revealFallback 0s 1.5s forwards; }
+@keyframes revealFallback { to { opacity: 1; transform: none; } }
 .chapter-line{position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.15;}
 .chapter-num-bg{position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Orbitron',monospace;font-size:clamp(6rem,15vw,14rem);font-weight:900;color:rgba(0,245,255,.02);pointer-events:none;user-select:none;line-height:1;overflow:hidden;max-width:50%;}
 
@@ -301,7 +304,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
     <div class="prologue-name">YUG<br><span class="cyan">BHATT</span></div>
     <div class="prologue-tagline">"Every model trained is a question asked to the universe."</div>
     <div class="prologue-stats">
-      <div class="p-stat"><span class="p-stat-num">2+</span><span class="p-stat-label">Missions</span></div>
+      <div class="p-stat"><span class="p-stat-num">3+</span><span class="p-stat-label">Missions</span></div>
       <div class="p-stat"><span class="p-stat-num">10+</span><span class="p-stat-label">Proofs</span></div>
       <div class="p-stat"><span class="p-stat-num">86%</span><span class="p-stat-label">ROC-AUC</span></div>
       <div class="p-stat"><span class="p-stat-num">∞</span><span class="p-stat-label">Curiosity</span></div>
@@ -357,7 +360,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
         <div class="arsenal-card"><div class="arsenal-title">⬡ AI & ML</div><div class="tag-cloud"><span class="skill-tag hot">Machine Learning</span><span class="skill-tag hot">Deep Learning</span><span class="skill-tag hot">Scikit-learn</span><span class="skill-tag hot">XGBoost</span><span class="skill-tag">AI Systems</span></div></div>
         <div class="arsenal-card"><div class="arsenal-title">⬡ Data Science</div><div class="tag-cloud"><span class="skill-tag hot">Data Science</span><span class="skill-tag hot">Data Analysis</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span></div></div>
         <div class="arsenal-card"><div class="arsenal-title">⬡ Explainable AI</div><div class="tag-cloud"><span class="skill-tag hot">SHAP Values</span><span class="skill-tag">Feature Importance</span><span class="skill-tag">Model Interpretability</span><span class="skill-tag">XAI</span></div></div>
-        <div class="arsenal-card"><div class="arsenal-title">⬡ Deployment</div><div class="tag-cloud"><span class="skill-tag hot">Streamlit</span><span class="skill-tag">Git & GitHub</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">Vercel</span></div></div>
+        <div class="arsenal-card"><div class="arsenal-title">⬡ Deployment</div><div class="tag-cloud"><span class="skill-tag hot">Streamlit</span><span class="skill-tag hot">Gradio</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">Git & GitHub</span><span class="skill-tag">Google Cloud</span><span class="skill-tag">Vercel</span></div></div>
         <div class="arsenal-card"><div class="arsenal-title">⬡ Domains</div><div class="tag-cloud"><span class="skill-tag hot">NLP</span><span class="skill-tag hot">Risk Modeling</span><span class="skill-tag">Anomaly Detection</span><span class="skill-tag">Financial Analytics</span><span class="skill-tag">Predictive AI</span></div></div>
       </div>
     </div>
@@ -378,37 +381,85 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
           <div>
             <div class="mission-badge indev">⚙ In Development · Collaborative (2 members)</div>
             <div class="mission-name">SmartFlare</div>
-            <div class="mission-subtitle">Financial Nervous System — Multi-Model AI Risk Engine</div>
+            <div class="mission-subtitle">Real-Time Financial Risk Intelligence — Predicting SME Loan Defaults Before They Happen</div>
           </div>
           <div class="mission-links">
             <a href="https://github.com/Yug-Bhatt" class="mission-link" target="_blank">GH</a>
           </div>
         </div>
         <div class="mission-body">
-          <div class="mission-role-badge">👤 MY ROLE — Frontend &amp; UI Development</div>
-          <p class="mission-desc">A collaborative AI project transforming static loan risk assessment into a dynamic, multi-model intelligence engine. Rather than labeling a loan "risky," it identifies the root cause through a Neural Risk Source architecture. My responsibility: building the entire Frontend interface and UI/UX system.</p>
+          <p class="mission-desc">An AI-powered, real-time risk intelligence platform that tracks <strong>500+ SME companies daily</strong>, assigning each a <strong>Survival Score (0–100)</strong> by fusing market data, financial ratios, and macroeconomic signals. Transforms credit risk analysis from a periodic, backward-looking process into a <em>continuous, forward-looking intelligence system</em> — giving financial institutions a <strong>2–3 quarter early warning advantage</strong> over traditional methods.</p>
+
           <div class="mission-grid">
             <div>
               <div class="mission-metrics">
-                <span class="metric">6-Node Intelligence Engine</span>
-                <span class="metric">Multi-Model Aggregation</span>
-                <span class="metric">Dynamic Risk Velocity</span>
+                <span class="metric">500+ SMEs Tracked</span>
+                <span class="metric">9-Layer Intelligence Pipeline</span>
+                <span class="metric">Survival Score 0–100</span>
+                <span class="metric">2–3 Qtr Early Warning</span>
+                <span class="metric">20+ Financial Ratios</span>
+                <span class="metric">Gradient Boosting ML</span>
+                <span class="metric">Fully Automated Pipeline</span>
+                <span class="metric">Explainable AI</span>
+              </div>
+
+              <div style="margin-top:1.2rem;">
+                <div class="arch-title">// 9-Layer Intelligence Pipeline</div>
+                <div class="arch-flow">
+                  <div class="arch-node">① Sector Engine — classifies each company's sector</div>
+                  <div class="arch-node">② Sector Health Engine — scores sector health 0–100</div>
+                  <div class="arch-node">③ Company Analysis — deep individual performance dive</div>
+                  <div class="arch-node">④ Correlation Engine — 20/60/100-day rolling windows</div>
+                  <div class="arch-node">⑤ Sector Sift — ranks companies by risk within sector</div>
+                  <div class="arch-node">⑥ Balance Sheet Analyzer — profitability · liquidity · leverage</div>
+                  <div class="arch-node">⑦ Holdings Analyzer — promoter pledging · institutional ownership</div>
+                  <div class="arch-node">⑧ ML Model — Gradient Boosting → Survival Score</div>
+                  <div class="arch-node out">⑨ Feature Store — engineered features for XAI transparency</div>
+                </div>
               </div>
             </div>
-            <div class="mission-arch">
-              <div class="arch-title">// System Architecture</div>
-              <div class="arch-flow">
-                <div class="arch-node">📥 Data — Transactions · Market · GST · Audit</div>
-                <div class="arch-arrow">▼ intelligence engine</div>
-                <div class="arch-node">🧠 Cashflow · UPI · NLP · Default · Industry · Owner</div>
-                <div class="arch-arrow">▼ outputs</div>
-                <div class="arch-node out">🎯 Dynamic Risk Velocity Score</div>
+
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+              <div class="mission-arch">
+                <div class="arch-title">// Automated Data Pipeline</div>
+                <div class="arch-flow">
+                  <div class="arch-node">📈 Yahoo Finance — daily market data</div>
+                  <div class="arch-arrow">▼ GitHub Actions (fully automated)</div>
+                  <div class="arch-node">🐍 Python Pipeline — scoring &amp; feature engineering</div>
+                  <div class="arch-arrow">▼ persisted to database</div>
+                  <div class="arch-node">🗄 Supabase — structured risk data store</div>
+                  <div class="arch-arrow">▼ rendered live</div>
+                  <div class="arch-node out">📊 React Dashboard — 5-view intelligence UI</div>
+                </div>
+              </div>
+
+              <div class="mission-arch">
+                <div class="arch-title">// Macro Intelligence Overlay</div>
+                <div class="arch-flow">
+                  <div class="arch-node">🇮🇳 India VIX — market volatility signal</div>
+                  <div class="arch-node">💵 USD-INR — currency pressure tracker</div>
+                  <div class="arch-node">🥇 Gold Prices — safe-haven demand signal</div>
+                  <div class="arch-node">🛢 Crude Oil — input cost &amp; inflation proxy</div>
+                  <div class="arch-arrow">▼ environment classification</div>
+                  <div class="arch-node out">⚡ RISK-ON / RISK-OFF detection</div>
+                </div>
+              </div>
+
+              <div class="mission-arch">
+                <div class="arch-title">// ML Model Inputs → Output</div>
+                <div class="arch-flow">
+                  <div class="arch-node">Debt/Equity · Current Ratio · Revenue Growth</div>
+                  <div class="arch-node">Sector Health · Sector Correlation</div>
+                  <div class="arch-node">Promoter Holdings · Institutional Holdings · Macro Signal</div>
+                  <div class="arch-arrow">▼ Gradient Boosting Classifier</div>
+                  <div class="arch-node out">🎯 Survival Score + Distress Probability %</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="mission-footer">
-          <span class="tag">Frontend Dev</span><span class="tag">UI/UX</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">NLP</span><span class="tag">Risk Modeling</span><span class="tag">🔒 Private</span>
+          <span class="tag">Python</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">GitHub Actions</span><span class="tag">Gradient Boosting</span><span class="tag">Yahoo Finance API</span><span class="tag">XAI</span><span class="tag">Risk Modeling</span><span class="tag">Financial Analytics</span><span class="tag">NLP</span><span class="tag">🔒 Private</span>
         </div>
       </div>
       <div class="mission-card">
@@ -436,6 +487,48 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
           <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">Logistic Regression</span>
         </div>
       </div>
+
+      <div class="mission-card">
+        <div class="mission-header">
+          <div>
+            <div class="mission-badge indev">⚙ Deployment In Progress</div>
+            <div class="mission-name">Multi-Persona AI Storyteller</div>
+            <div class="mission-subtitle">Prompt Chaining — Multi-Character Narrative Engine</div>
+          </div>
+          <div class="mission-links">
+            <a href="https://github.com/Yug-Bhatt/multi-persona-storyteller" class="mission-link" target="_blank">GH</a>
+            <a href="https://huggingface.co/spaces/YugBhatt21/multi-persona-storyteller" class="mission-link" target="_blank">↗</a>
+          </div>
+        </div>
+        <div class="mission-body">
+          <p class="mission-desc">A web app that generates short stories told from multiple character perspectives using AI. Users select a genre, tone, and number of characters — the app creates unique personas and writes a chapter for each character in their own distinct voice. Unlike single-prompt wrappers, this implements <em>prompt chaining</em>: one API call generates the characters, then one call per character generates their chapter with full context passing — a real-world production pattern used in AI pipelines.</p>
+          <div class="mission-grid">
+            <div>
+              <div class="mission-metrics">
+                <span class="metric">Prompt Chaining</span>
+                <span class="metric">Multi-LLM Calls</span>
+                <span class="metric">Context Passing</span>
+                <span class="metric">Llama 3.3 70B</span>
+              </div>
+            </div>
+            <div class="mission-arch">
+              <div class="arch-title">// Pipeline Architecture</div>
+              <div class="arch-flow">
+                <div class="arch-node">🎭 User Input — Genre · Tone · Characters</div>
+                <div class="arch-arrow">▼ call 1 — persona generation</div>
+                <div class="arch-node">🧠 LLM generates unique character personas</div>
+                <div class="arch-arrow">▼ call per character — chapter generation</div>
+                <div class="arch-node">✍ Individual chapters in each character's voice</div>
+                <div class="arch-arrow">▼ stitch output</div>
+                <div class="arch-node out">📖 Complete multi-perspective story</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mission-footer">
+          <span class="tag">Python</span><span class="tag">Groq API</span><span class="tag">Llama 3.3 70B</span><span class="tag">Gradio</span><span class="tag">Hugging Face Spaces</span><span class="tag">Prompt Chaining</span><span class="tag">Generative AI</span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="chapter-line"></div>
@@ -450,10 +543,10 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
     <p class="chapter-narrative">"Credentials are the breadcrumbs of a learning journey — each one a milestone in the relentless pursuit of knowledge. Here is the evidence."</p>
     <div class="chapter-content">
       <div class="proof-stats">
-        <div class="proof-stat"><span class="proof-stat-num">10+</span><span class="proof-stat-label">Total</span></div>
+        <div class="proof-stat"><span class="proof-stat-num">11+</span><span class="proof-stat-label">Total</span></div>
         <div class="proof-stat"><span class="proof-stat-num">03</span><span class="proof-stat-label">AI Focused</span></div>
         <div class="proof-stat"><span class="proof-stat-num">01</span><span class="proof-stat-label">Cloud</span></div>
-        <div class="proof-stat"><span class="proof-stat-num">06</span><span class="proof-stat-label">Prog & Workshop</span></div>
+        <div class="proof-stat"><span class="proof-stat-num">07</span><span class="proof-stat-label">Prog & Workshop</span></div>
       </div>
       <div class="proof-filters">
         <button class="filter-btn active" onclick="filterCerts('all',this)">All</button>
@@ -473,6 +566,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
         <div class="cert-card" data-category="programming"><img class="cert-thumb" src="certificates/google_python_certificate.jpg" alt="Google Python" onerror="this.style.display='none'"/><div class="cert-info"><div class="cert-name">Google — Data Analysis Python</div><span class="cert-cat programming">Programming</span></div></div>
         <div class="cert-card" data-category="workshop"><img class="cert-thumb" src="certificates/nvidia_workshop.jpg" alt="NVIDIA Workshop" onerror="this.style.display='none'"/><div class="cert-info"><div class="cert-name">NVIDIA Workshop</div><span class="cert-cat workshop">Workshop</span></div></div>
         <div class="cert-card" data-category="workshop"><img class="cert-thumb" src="certificates/CHARUSAT GenAI Workshop.jpg" alt="GenAI Workshop" onerror="this.style.display='none'"/><div class="cert-info"><div class="cert-name">CHARUSAT — GenAI Workshop</div><span class="cert-cat workshop">Workshop</span></div></div>
+        <div class="cert-card" data-category="programming"><img class="cert-thumb" src="certificates/DAA_COURSERA.jpeg" alt="DAA Coursera" onerror="this.style.display='none'"/><div class="cert-info"><div class="cert-name">Algorithm Design: Mastering Computational Problem Solving</div><span class="cert-cat programming">Programming</span></div></div>
       </div>
     </div>
   </div>
@@ -492,7 +586,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
           <h2>Let's Build Something <span>Intelligent.</span></h2>
           <p>Currently exploring AI/ML internship opportunities and ambitious projects. Open to collaborations, research, and anything that pushes the boundaries of what machines can do.</p>
           <div class="contact-items">
-            <a href="mailto:yugbhatt75@gmail.com" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value">yugbhatt75@gmail.com</div></div></a>
+            <a href="/cdn-cgi/l/email-protection#e9909c8e8b81889d9ddedca98e84888085c78a8684" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><span class="__cf_email__" data-cfemail="ef969a888d878e9b9bd8daaf88828e8683c18c8082">[email&#160;protected]</span></div></div></a>
             <a href="tel:+917600634214" class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value">+91 76006 34214</div></div></a>
             <div class="contact-item" style="cursor:default;"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Nadiad, Gujarat, India</div></div></div>
           </div>
@@ -512,14 +606,14 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
             <div><span class="t-prompt">➜ </span><span class="t-cmd">cat epilogue.json</span></div>
             <div style="margin-top:.5rem;color:var(--muted)">{</div>
             <div>&nbsp;&nbsp;<span class="t-key">"protagonist"</span>: <span class="t-val">"Yug Bhatt"</span>,</div>
-            <div>&nbsp;&nbsp;<span class="t-key">"arc"</span>: <span class="t-val">"Student → AI Engineer"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"arc"</span>: <span class="t-val">"Student → AI/Fintech Engineer"</span>,</div>
             <div>&nbsp;&nbsp;<span class="t-key">"university"</span>: <span class="t-val">"CHARUSAT"</span>,</div>
-            <div>&nbsp;&nbsp;<span class="t-key">"weapons"</span>: [<span class="t-val">"ML"</span>, <span class="t-val">"DL"</span>, <span class="t-val">"XAI"</span>],</div>
+            <div>&nbsp;&nbsp;<span class="t-key">"weapons"</span>: [<span class="t-val">"ML"</span>, <span class="t-val">"DL"</span>, <span class="t-val">"XAI"</span>, <span class="t-val">"GenAI"</span>],</div>
             <div>&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-val">"Seeking internships"</span>,</div>
             <div>&nbsp;&nbsp;<span class="t-key">"next_chapter"</span>: <span class="t-val">"To be written..."</span></div>
             <div style="color:var(--muted)">}</div>
             <div style="margin-top:.75rem"><span class="t-prompt">➜ </span><span class="t-comment"># The story continues</span></div>
-            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal yugbhatt75@gmail.com</span><span class="t-cursor"></span></div>
+            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c05091b1e141d08084b493c1b111d1510521f1311">[email&#160;protected]</a></span><span class="t-cursor"></span></div>
           </div>
         </div>
       </div>
@@ -536,7 +630,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
   </div>
 </section>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Cursor
 const cursor=document.getElementById('cursor');
 const ring=document.getElementById('cursorRing');
@@ -559,8 +653,13 @@ window.addEventListener('scroll',()=>{const s=window.scrollY;const t=document.bo
 // Chapter reveal
 const revealObs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.chapter-label,.chapter-title,.chapter-narrative,.chapter-content').forEach(el=>el.classList.add('visible'));}});
-},{threshold:.12});
+},{threshold:0, rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.chapter').forEach(ch=>revealObs.observe(ch));
+
+// Fallback: force-show all chapter elements after short delay in case observer doesn't fire
+setTimeout(()=>{
+  document.querySelectorAll('.chapter-label,.chapter-title,.chapter-narrative,.chapter-content').forEach(el=>el.classList.add('visible'));
+}, 800);
 
 // Chapter dots
 const chapters=['prologue','chapter-origin','chapter-arsenal','chapter-missions','chapter-proof','chapter-signal'];
@@ -582,9 +681,4 @@ function filterCerts(cat,btn){
 
 // Fallback - force show everything
 setTimeout(()=>{
-  document.querySelectorAll('.chapter-label,.chapter-title,.chapter-narrative,.chapter-content').forEach(el=>el.classList.add('visible'));
-  document.querySelectorAll('.prologue-pre,.prologue-name,.prologue-tagline,.prologue-stats,.prologue-begin,.prologue-photo-wrap,.prologue-scroll-hint').forEach(el=>{el.style.opacity='1';el.style.transform='translateY(0)';});
-},400);
-</script>
-</body>
-</html>
+  document.querySelectorAll('.c
