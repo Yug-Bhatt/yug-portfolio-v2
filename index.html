@@ -25,8 +25,8 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;cursor:none;}
 
 /* CURSOR */
-.cursor{width:10px;height:10px;background:var(--cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);box-shadow:var(--glow-cyan);transition:width .2s,height .2s,background .2s;}
-.cursor-ring{width:32px;height:32px;border:1px solid rgba(0,245,255,0.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
+.cursor{width:10px;height:10px;background:var(--cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:var(--glow-cyan);transition:width .2s,height .2s,background .2s;}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(0,245,255,0.4);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
 
 /* PROGRESS */
 #progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--pink));z-index:9997;width:0%;box-shadow:0 0 10px var(--cyan);}
@@ -289,7 +289,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
 <nav>
   <div class="nav-logo">YUG<span>.</span>AI</div>
   <div class="nav-story-pos" id="navStoryPos">PROLOGUE</div>
-  <a href="YUG_BHATT_Resume.pdf" class="nav-cta" target="_blank">[ Resume ]</a>
+  <a href="Yug_Resume.pdf" class="nav-cta" target="_blank">[ Resume ]</a>
 </nav>
 
 <!-- PROLOGUE -->
@@ -385,6 +385,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
           </div>
           <div class="mission-links">
             <a href="https://github.com/Yug-Bhatt" class="mission-link" target="_blank">GH</a>
+            <a href="https://aegis-fin-ytry.vercel.app/" class="mission-link" target="_blank">↗</a>
           </div>
         </div>
         <div class="mission-body">
@@ -586,7 +587,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
           <h2>Let's Build Something <span>Intelligent.</span></h2>
           <p>Currently exploring AI/ML internship opportunities and ambitious projects. Open to collaborations, research, and anything that pushes the boundaries of what machines can do.</p>
           <div class="contact-items">
-            <a href="/cdn-cgi/l/email-protection#e9909c8e8b81889d9ddedca98e84888085c78a8684" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><span class="__cf_email__" data-cfemail="ef969a888d878e9b9bd8daaf88828e8683c18c8082">[email&#160;protected]</span></div></div></a>
+            <a href="/cdn-cgi/l/email-protection#ee979b898c868f9a9ad9dbae89838f8782c08d8183" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><span class="__cf_email__" data-cfemail="bdc4c8dadfd5dcc9c98a88fddad0dcd4d193ded2d0">[email&#160;protected]</span></div></div></a>
             <a href="tel:+917600634214" class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value">+91 76006 34214</div></div></a>
             <div class="contact-item" style="cursor:default;"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Nadiad, Gujarat, India</div></div></div>
           </div>
@@ -613,7 +614,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
             <div>&nbsp;&nbsp;<span class="t-key">"next_chapter"</span>: <span class="t-val">"To be written..."</span></div>
             <div style="color:var(--muted)">}</div>
             <div style="margin-top:.75rem"><span class="t-prompt">➜ </span><span class="t-comment"># The story continues</span></div>
-            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c05091b1e141d08084b493c1b111d1510521f1311">[email&#160;protected]</a></span><span class="t-cursor"></span></div>
+            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f8f4e6e3e9e0f5f5b6b4c1e6ece0e8edafe2eeec">[email&#160;protected]</a></span><span class="t-cursor"></span></div>
           </div>
         </div>
       </div>
@@ -673,12 +674,4 @@ chapters.forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(
 dots.forEach(dot=>{dot.addEventListener('click',()=>{const t=document.getElementById(dot.dataset.target);if(t)t.scrollIntoView({behavior:'smooth'});});});
 
 // Cert filter
-function filterCerts(cat,btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-  document.querySelectorAll('.cert-card').forEach(card=>{card.style.display=(cat==='all'||card.dataset.category===cat)?'block':'none';});
-}
-
-// Fallback - force show everything
-setTimeout(()=>{
-  document.querySelectorAll('.c
+functi
