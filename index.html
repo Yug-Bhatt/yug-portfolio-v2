@@ -22,11 +22,8 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;cursor:none;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
 
-/* CURSOR */
-.cursor{width:10px;height:10px;background:var(--cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:var(--glow-cyan);transition:width .2s,height .2s,background .2s;}
-.cursor-ring{width:32px;height:32px;border:1px solid rgba(0,245,255,0.4);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s;}
 
 /* PROGRESS */
 #progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--pink));z-index:9997;width:0%;box-shadow:0 0 10px var(--cyan);}
@@ -227,7 +224,6 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
 /* RESPONSIVE */
 @media(max-width:900px){
   body{cursor:auto;}
-  .cursor,.cursor-ring{display:none;}
   #chapter-indicator{display:none;}
   nav{padding:1rem 1.5rem;display:flex;justify-content:space-between;}
   .nav-story-pos{display:none;}
@@ -241,7 +237,6 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
 }
 @media(max-width:600px){
   body{cursor:auto;}
-  .cursor,.cursor-ring{display:none;}
   #chapter-indicator{display:none;}
   nav{padding:.9rem 1rem;display:flex;justify-content:space-between;}
   .nav-story-pos{display:none;}
@@ -271,8 +266,6 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <div id="progress-bar"></div>
 <div class="grid-bg"></div>
 <div class="particles" id="particles"></div>
@@ -587,7 +580,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
           <h2>Let's Build Something <span>Intelligent.</span></h2>
           <p>Currently exploring AI/ML internship opportunities and ambitious projects. Open to collaborations, research, and anything that pushes the boundaries of what machines can do.</p>
           <div class="contact-items">
-            <a href="/cdn-cgi/l/email-protection#ee979b898c868f9a9ad9dbae89838f8782c08d8183" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><span class="__cf_email__" data-cfemail="bdc4c8dadfd5dcc9c98a88fddad0dcd4d193ded2d0">[email&#160;protected]</span></div></div></a>
+            <a href="mailto:yugbhatt75@gmail.com" class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value">yugbhatt75@gmail.com</div></div></a>
             <a href="tel:+917600634214" class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value">+91 76006 34214</div></div></a>
             <div class="contact-item" style="cursor:default;"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Nadiad, Gujarat, India</div></div></div>
           </div>
@@ -614,7 +607,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
             <div>&nbsp;&nbsp;<span class="t-key">"next_chapter"</span>: <span class="t-val">"To be written..."</span></div>
             <div style="color:var(--muted)">}</div>
             <div style="margin-top:.75rem"><span class="t-prompt">➜ </span><span class="t-comment"># The story continues</span></div>
-            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f8f4e6e3e9e0f5f5b6b4c1e6ece0e8edafe2eeec">[email&#160;protected]</a></span><span class="t-cursor"></span></div>
+            <div><span class="t-prompt">➜ </span><span class="t-cmd">connect --signal yugbhatt75@gmail.com</span><span class="t-cursor"></span></div>
           </div>
         </div>
       </div>
@@ -631,18 +624,7 @@ nav{position:fixed;top:2px;left:0;right:0;z-index:1000;display:grid;grid-templat
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Cursor
-const cursor=document.getElementById('cursor');
-const ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-(function animCursor(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;cursor.style.left=mx+'px';cursor.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animCursor);})();
-document.querySelectorAll('a,button,.cert-card,.mission-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.width='18px';cursor.style.height='18px';cursor.style.background='var(--pink)';ring.style.width='46px';ring.style.height='46px';});
-  el.addEventListener('mouseleave',()=>{cursor.style.width='10px';cursor.style.height='10px';cursor.style.background='var(--cyan)';ring.style.width='32px';ring.style.height='32px';});
-});
-
+<script>
 // Particles
 const pC=document.getElementById('particles');
 for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'vw';p.style.animationDuration=(10+Math.random()*25)+'s';p.style.animationDelay=(Math.random()*25)+'s';if(Math.random()>.6)p.style.background='var(--pink)';pC.appendChild(p);}
@@ -674,4 +656,13 @@ chapters.forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(
 dots.forEach(dot=>{dot.addEventListener('click',()=>{const t=document.getElementById(dot.dataset.target);if(t)t.scrollIntoView({behavior:'smooth'});});});
 
 // Cert filter
-functi
+function filterCerts(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.cert-card').forEach(card=>{
+    card.style.display=(cat==='all'||card.dataset.category===cat)?'block':'none';
+  });
+}
+</script>
+</body>
+</html>
